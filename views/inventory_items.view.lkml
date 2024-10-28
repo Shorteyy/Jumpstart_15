@@ -61,10 +61,18 @@ view: inventory_items {
 
   measure: total_cost {
     type: sum
-    sql: ${cost} ;;  }
+    sql: ${cost} ;;
+    value_format: "€#,##0.00"   }
   measure: average_cost {
     type: average
-    sql: ${cost} ;;  }
+    sql: ${cost};;
+    value_format: "€#,##0.00" }
+
+  measure: total_retail_price{
+    type: sum
+    sql: ${product_retail_price} ;;
+    value_format: "€#,##0.00"   }
+
 
 # DYN Measure
 

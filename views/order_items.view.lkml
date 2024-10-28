@@ -76,4 +76,20 @@ view: order_items {
   ]
   }
 
+parameter: sales_price_p  {
+  type:  unquoted
+  default_value: "SUM"
+  allowed_value: {label: "SUM"
+    value: "SUM"}
+  allowed_value: {label: "MAX"
+    value: "MAX"}
+  allowed_value: {label: "AVG"
+    value: "AVG"}
+}
+
+  measure: sales_price_m {
+    type:  number
+    label_from_parameter: sales_price_p
+    sql: {% parameter sales_price_p %}(${sale_price});;
+  }
 }

@@ -73,3 +73,7 @@ explore: orders {
     relationship: many_to_one
   }
 }
+
+explore: distribution_centers {
+  from: distribution_centers
+}
